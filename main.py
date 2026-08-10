@@ -4,14 +4,13 @@ from helper import *
 input = sys.argv
 
 def main():
-    for i, val in enumerate(input):
-        print(f"At index {i}, we have argument {val}")
+    isValidOp(input)
 
 main()
 
 
 
-#TODO: each task should have the following properties to keep track of in a JSON file
+# Each task should have the following properties to keep track of in a JSON file
 
 # id: A unique identifier for the task
 
