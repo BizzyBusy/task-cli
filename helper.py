@@ -6,15 +6,12 @@ def isValidOp(input):
     """
 
     if len(input) < 2:
-        print("\nEnter an action.\n")
         return False
     elif len(input) > 4:
-        print("\nToo many arguments provided.\n")
         return False
 
     first_op = input[1].casefold()
     if first_op not in {"list", "add", "delete", "update", "mark-done", "mark-in-progress"}:
-        print("\nEnter a valid first argument.\n")
         return False
 
     try:
@@ -22,16 +19,13 @@ def isValidOp(input):
     except IndexError:
         if first_op == "list":
             return True
-        print("\nMissing a second argument.\n")
         return False
 
     if first_op != "update" and len(input) > 3:
-        print("\nToo many arguments provided.\n")
         return False
 
     if first_op == "list":
         if second_op.casefold() not in {"done", "todo", "in-progress"}:
-            print("\nSecond argument is invalid.\n")
             return False
         return True
     elif first_op == "add":
@@ -41,7 +35,6 @@ def isValidOp(input):
             #If we can't cast the second argument to an int, then it is not a number and is therefore invalid.
             int(second_op)
         except ValueError:
-            print("\nSecond argument is not a number.\n")
             return False
 
         if first_op != "update" or len(input) == 4:
