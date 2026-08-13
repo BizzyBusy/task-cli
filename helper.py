@@ -7,8 +7,6 @@ def isValidOp(input):
 
     if len(input) < 2:
         return False
-    elif len(input) > 4:
-        return False
 
     first_op = input[1].casefold()
     if first_op not in {"list", "add", "delete", "update", "mark-done", "mark-in-progress"}:
@@ -41,8 +39,6 @@ def isValidOp(input):
             return True
         return False
    
-
-#TODO 2: write testcases to test correctness of isValidOp function.
 
 
 #TODO 3: write functions that update JSON file (and creates it if it doesn't exist) based on the actions defined above
